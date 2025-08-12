@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        display: flex;
+        gap: 10px;
+    }
+    .Images {
+        width: 750px;
+        height: auto;
+    }
+    header {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-right: 20%;
+    }
+
+    @media (max-width: 100vh) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .Images {
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <header>
+        <h1 id="MainHeader">Media Queries Testing</h1>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+            <img src="./imgs/metallica-livemetallicacom-20230505140756-2280810125.jpg" alt="" class="Images">
+            <img src="./imgs/metallica-metallica-32351752-1100-823-1737313384.jpg" alt="" class="Images">
+            <p><strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione veritatis culpa, temporibus rem dolorum nesciunt perferendis voluptatem accusantium ab. Ullam deleniti hic dolore iste necessitatibus perferendis voluptatibus aliquid doloribus dignissimos repellat neque odit autem cupiditate sit nemo, vitae dolor sapiente!</strong></p>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
