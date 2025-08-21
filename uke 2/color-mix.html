@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random HSL Color Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: hsl(266 83 43);
+             background-color: color-contrast(var(--generated-color, black) vs darkgray, darkblue, darkgreen, gray, lightgray);
+        }
+        .color-display {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+        }
+
+        .color-mix-black {
+             width: 200px;
+            height: 200px;
+            margin: 20px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            background-color: color-mix(in hsl, hsl(202 61 67), black 50%);
+        }
+
+        .color-mix-white {
+             width: 200px;
+            height: 200px;
+            margin: 20px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            background-color: color-mix(in hsl, hsl(131 84 76), white 50%);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="generateRandomHSL()">
+    <h1>Random HSL Color Generator</h1>
+    <div class="color-display"></div>
+    <p class="color-code">HSL: </p>
+    <div class="color-mix-black"></div>
+    <p class="color-code">HSL: </p>
+    <div class="color-mix-white"></div>
+    <p class="color-code">HSL: </p>
+
+    <script>
+        const display = document.querySelector('.color-display');
+        const output = document.querySelector('.color-code');
+
+        function generateRandomHSL() {
+            const hue = Math.floor(Math.random() * 360);
+            const saturation = Math.floor(Math.random() * 101);
+            const lightness = Math.floor(Math.random() * 101);
+            const hslColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+
+            display.style.backgroundColor = hslColor;
+            output.textContent = `HSL: ${hslColor}`;
+        }
+
+        // Generate an initial color on load
+        generateRandomHSL();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [data-status] {
+            background-color: rgb(0, 149, 255);
+        }
+
+        [data-status="active"]{
+            background-color: greenyellow;
+        }
+
+        [data-status="inactive"]{
+            border: 5px solid rgb(75, 75, 75);
+        }
+
+        [data-role^="admin"]{ /*velger elementer der data-role starter med Admin*/
+            font-weight: bold;
+        }
+
+        [data-role*="user"]{ /*velger elementer der data-role inneholder user*/
+            text-decoration: underline;
+        }
+
+        [data-role$="guest"]{ /*velger elementer der data-role slutter med user*/
+            color: rgb(85, 85, 85);
+        }
+
+        [data-role="admin-user"][data-status="active"]{/*Kombiner selectors for å velge kun elementer som er både data-role="admin-user" og data-status="active" */
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+  <li data-status="active" data-role="admin-user">Admin User (Active)</li>
+  <li data-status="inactive" data-role="guest">Guest (Inactive)</li>
+  <li data-status="active" data-role="user">Regular User (Active)</li>
+  <li data-status="pending" data-role="admin-guest">
+    Admin Guest (Pending)
+  </li>
+  <li data-status="inactive" data-role="user">Regular User (Inactive)</li>
+</ul>
+</body>
+</html>

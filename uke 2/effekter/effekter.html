@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Effects Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #f9f9f9, #e0e0e0);
+            min-height: 100vh;
+        }
+
+        .text-shadow-example {
+            text-align: center;
+            font-size: 2rem;
+            margin: 20px 0;
+            text-shadow: 20px 13px 6px rgb(255, 0, 0);
+        }
+
+        .box-shadow-example {
+            width: 200px;
+            height: 100px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 5px 5px 10px 15px rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .box-shadow-example:hover {
+            box-shadow: 8px 8px 15px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .gradient-example {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, #ff7eb3, #ff758c, #f5163b);
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .multiple-background-example {
+            width: 300px;
+            height: 150px;
+            margin: 20px auto;
+            background: 
+            url('https://picsum.photos/id/10/640/480') no-repeat left center,
+            url('https://picsum.photos/id/30/640/480') no-repeat right center,
+            url('https://picsum.photos/id/50/640/480') no-repeat center center;
+            background-size: 50% 100%, 50% 100%, 50% 50%;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-example img {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 20px auto;
+            filter: grayscale(50%) brightness(1.2) blur(2px);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Effects Exercise</h1>
+
+    <div class="text-shadow-example">This is text with shadow test test test test test</div>
+
+    <div class="box-shadow-example">Box with shadow</div>
+
+    <div class="gradient-example">Gradient Background</div>
+
+    <div class="multiple-background-example">Multiple Backgrounds</div>
+
+    <div class="filter-example">
+        <img src="https://via.placeholder.com/300" alt="Example Image with Filter">
+    </div>
+</body>
+</html>

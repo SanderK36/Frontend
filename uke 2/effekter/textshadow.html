@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .effekt.textshadow {
+        color: #6c4a20;
+        text-shadow: 10px 15px 2px #1e1d1c;
+        }
+
+        .effekt.textshadow-hsl {
+        color: hsl(30, 60%, 40%);
+        text-shadow: 1px 10px 2px hsl(30, 80%, 80%);
+        }
+
+
+        .effekt.textshadow-multi {
+                color: #6c4a20;
+                text-shadow:
+                10px 10px 1px #fff,
+                -1px -2px 1px #d6c29a,
+                0 4px 12px #1e1d1c;
+            }
+
+            .bigHeaderShadow {
+              font-size: 50px;
+              /* text-shadow: 1px 10px 1px rgb(255, 0, 0) */
+              /* text-shadow: 1px 10px 5px #1135ff */
+              text-shadow: 1px 10px 5px hsl(137, 100%, 44%)
+            }
+    </style>
+</head>
+<body>
+    <div class="box">
+  <div class="effekt textshadow">Text-shadow<br><span class="label">text-shadow</span></div>
+  <h2 class="effekt textshadow-hsl">HSL shadow eksempel</h2>
+  <h1 class="effekt textshadow-multi">osidjoisdfgjiosdig</h1>
+  <div class="bigHeaderShadow">Yoooooooooooo</div>
+</div>
+</body>
+</html>

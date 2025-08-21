@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .listA li {
+        color: blue;
+    }
+
+    .listB li {
+        color: green;
+    }
+    .listA li:nth-child(3) {
+        background-color: pink;
+    }
+
+    .listB li:nth-child(3) {
+        background-color: pink;
+    }
+
+    li:nth-child(odd) {
+        color: rgb(41, 248, 255);
+    }
+
+     li:nth-child(odd) {
+        color: rgb(41, 248, 255);
+    }
+
+    .listA li:not(:first-child){
+        border: 1px solid black;
+    }
+
+    .listB li:not(:first-child){
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <ul class="listA">
+  <li>A</li>
+  <li></li>
+  <li>B</li>
+  <li></li>
+  <li>C</li>
+  <li></li>
+  <li>D</li>
+  <li></li>
+  <li>E</li>
+  <li></li>
+</ul>
+
+<ul class="listB">
+  <li>A</li>
+  <li></li>
+  <li>B</li>
+  <li></li>
+  <li>C</li>
+  <li></li>
+  <li>D</li>
+  <li></li>
+  <li>E</li>
+  <li></li>
+</ul>
+</body>
+</html>
