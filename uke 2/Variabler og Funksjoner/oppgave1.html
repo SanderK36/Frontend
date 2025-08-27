@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reis til Mars (med stil)</title>
+  <style>
+    :root {
+        --mainColor: #ff4500;
+        --hoverColor: #cc3700;
+        --cardBackgroundColor: #fff;
+        --headerColor: #fff;
+        --h2Color:#333;
+        --cardBorder:#ccc;
+        --bodyBackgroundColor:#ffefd5;
+        --bodyColor:#481c1c;
+        --buttonColor:#fff;
+        --cardTextColor:#666;
+        --cardBoxShadow:rgba(0, 0, 0, 0.1);
+        --h1FontSize: clamp(2vw, 2.5vw, 3.5vw);
+        --h2FontSize: clamp(1vw, 1.7vw, 10vw);
+        --cardTitleFontSize: clamp(1vw,1.4vw,5vw);
+        --cardTextFontSize: clamp(0.7vw, 1vw, 2vw);
+        --buttonFontSize: clamp(0.6vw, 0.9vw, 2vw);
+        
+    }
+    body {
+      background-color: var(--bodyBackgroundColor);
+      color: var(--bodyColor);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--mainColor);
+      color: var(--headerColor);
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: var(--h1FontSize);
+      margin: 0;
+    }
+
+    h2 {
+      font-size: var(--h2FontSize);
+      color: var(--h2Color);
+    }
+
+    .section {
+      padding: 20px;
+    }
+
+    .card {
+      background-color: var(--cardBackgroundColor);
+      border: 2px solid var(--cardBorder);
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px var(--cardBoxShadow);
+    }
+
+    .card-title {
+      font-size: var(--cardTitleFontSize);
+      color: var(--mainColor);
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: var(--cardTextFontSize);
+      color: var(--cardTextColor);
+    }
+
+    .button {
+      background-color: var(--mainColor);
+      color: var(--buttonColor);
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: var(--buttonFontSize);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: var(--hoverColor);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reis til Mars (med stil)</h1>
+  </header>
+
+  <div class="section">
+    <h2>Velg din pakkereise</h2>
+
+    <div class="card">
+      <h3 class="card-title">Luksuspakke</h3>
+      <p class="card-text">Reis til Mars i en femstjerners romkapsel med egen jacuzzi og gourmetmat.</p>
+      <button class="button">Bestill nå</button>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Eventyrpakke</h3>
+      <p class="card-text">Opplev Mars på nært hold med guidede turer til Olympus Mons og Valles Marineris.</p>
+      <button class="button">Bestill nå</button>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Familiepakke</h3>
+      <p class="card-text">Ta med hele familien på en spennende reise til Mars, komplett med aktiviteter for barn.</p>
+      <button class="button">Bestill nå</button>
+    </div>
+  </div>
+</body>
+</html>
