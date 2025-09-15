@@ -4,7 +4,7 @@ export type App = {
     currentPage: 'products'
 }
 export type Product = {
-     id: number
+     id: string
      name: string
      price: number
      description: string
