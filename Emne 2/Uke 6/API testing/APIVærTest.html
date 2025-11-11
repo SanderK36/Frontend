@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Været hvor som helst</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      margin-left: 30%;
+      background: linear-gradient( to right, #ffffff, #828181);
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    #resultat {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    button {
+      cursor: pointer;
+      background: linear-gradient( to right, #4c4faf, #ce197d);
+      color: white;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Hent været!</h1>
+  
+  <input type="text" id="by" placeholder="Skriv inn by, f.eks. Elverum">
+  <button onclick="hentVær()">Hent været</button>
+  
+  <p id="resultat">Resultat vises her...</p>
+
+  <script>
+async function hentVær() {
+  const by = document.getElementById("by").value.trim();
+  if (!by) {
+    document.getElementById("resultat").innerHTML = "Skriv inn en by!";
+    return;
+  }
+
+  document.getElementById("resultat").innerHTML = "🔄 <em>Henter været...</em>";
+
+  try {
+    const svar = await fetch(`https://wttr.in/${by}?format=j1`);
+    
+    if (!svar.ok) {
+      throw new Error("Fant ikke byen");
+    }
+
+    const data = await svar.json();
+    const temp = data.current_condition[0].temp_C;
+    const beskrivelse = data.current_condition[0].weatherDesc[0].value;
+
+    const ikon = velgVærikon(beskrivelse);
+
+    document.getElementById("resultat").innerHTML = 
+      `<strong>${ikon} ${by}</strong><br>
+       ${temp}°C – ${beskrivelse}`;
+
+  } catch (error) {
+    document.getElementById("resultat").innerHTML = 
+      `Feil: ${error.message}. Prøv en annen by!`;
+  }
+}
+
+function velgVærikon(beskrivelse) {
+  const lav = beskrivelse.toLowerCase();
+  
+  if (lav.includes("sunny") || lav.includes("clear")) return "☀️";
+  if (lav.includes("cloudy") || lav.includes("partly")) return "☁️";
+  if (lav.includes("rain") || lav.includes("shower")) return "🌧️";
+  if (lav.includes("snow")) return "❄️";
+  if (lav.includes("thunder") || lav.includes("storm")) return "⛈️";
+  if (lav.includes("fog") || lav.includes("mist")) return "🌫️";
+  
+  return "🌤️";
+}
+</script>
+</body>
+</html>

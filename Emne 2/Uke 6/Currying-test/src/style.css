@@ -1,0 +1,18 @@
+body {
+       font-family: Arial, sans-serif;
+       display: flex;
+       justify-content: center;
+       padding: 20px;
+     }
+     #app {
+       text-align: center;
+     }
+     input {
+       padding: 8px;
+       margin: 10px;
+       font-size: 16px;
+     }
+     p {
+       font-size: 18px;
+       color: #333;
+     }

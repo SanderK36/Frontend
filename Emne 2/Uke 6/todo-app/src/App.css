@@ -1,0 +1,62 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  font-family: 'Gill Sans', sans-serif;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+button {
+  font-size: 2rem;
+  padding: 15px 30px;
+  border-radius: 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+button:disabled,
+button.loading {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.tittel {
+  font-size: 2rem;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+.laster {
+  color: orange;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+.ferdig {
+  color: green;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.ikke-ferdig {
+  color: red;
+  font-size: 2rem;
+}
+
+.error {
+  color: darkred;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
