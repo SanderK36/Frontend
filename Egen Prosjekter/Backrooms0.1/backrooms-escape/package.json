@@ -1,5 +1,5 @@
 {
-  "name": "vue-clicker",
+  "name": "backrooms-escape",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -16,7 +16,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "pinia": "^3.0.4",
+    "pinia": "^3.0.3",
     "vue": "^3.5.22"
   },
   "devDependencies": {

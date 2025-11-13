@@ -1,83 +1,21 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { useClickerStore } from '@/stores/clickerStore'
 
-const count = ref(0)
-
-interface ClickEvent {
-  count: number
-  time: string
-}
-const clickHistory = ref<ClickEvent[]>([])
-
-const emit = defineEmits<{
-  'update:history': [ClickEvent[]]
-  'update:count': [number]
-  'reset': []
-}>()
-
-const buttonText = computed((): string => {
-  if (count.value === 5) return "Gratulerer! du har nådd 5!"
-  if (count.value === 1) return `Klikket ${count.value} gang`
-  if (count.value === 10) return `DU ER EN KLIKKEMESTER!`
-  return `Klikket ${count.value} ganger`
-})
-
-
-const addToHistory = (increment: number = 1) => {
-  const now = new Date()
-  const time = now.toLocaleTimeString('nb-NO', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  })
-  
-  const newCount = count.value + increment
-  clickHistory.value.push({ count: newCount, time })
-  
-  emit('update:history', clickHistory.value)
-  emit('update:count', newCount)
-}
-
-const handleClick = () => {
-  count.value++
-  addToHistory()
-}
-
-const doubleClick = () => {
-  count.value += 2
-  addToHistory(2) 
-}
-
-const handleContextMenu = (e: MouseEvent) => {
-  e.preventDefault()
-  if (count.value > 0) {
-    count.value--
-    addToHistory(-1)
-  }
-}
-
-const reset = () => {
-  count.value = 0
-  clickHistory.value = []
-  emit('reset')
-  emit('update:history', [])
-  emit('update:count', 0)
-}
-
-defineExpose({ count })
+const store = useClickerStore()
 </script>
 
 <template>
-  <button
-  @click="handleClick"
-  @dblclick="doubleClick"
-  @contextmenu="handleContextMenu"
-  class="clicker-button">
-    {{ buttonText }}
-  </button>
-  <button @click="reset" class="reset-button">
-    Nullstill
-  </button>
+  <div class="clicker-wrapper">
+    <button
+      @click="store.handleClick"
+      @dblclick="store.handleDoubleClick"
+      @contextmenu="store.handleContextMenu"
+      class="clicker-button"
+    >
+      {{ store.buttonText }}
+    </button>
+    <button @click="store.reset" class="reset-button">Nullstill</button>
+  </div>
 </template>
 
 <style scoped>
@@ -126,8 +64,14 @@ defineExpose({ count })
 }
 
 @keyframes clickPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>

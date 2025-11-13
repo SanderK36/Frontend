@@ -1,12 +1,7 @@
 <script setup lang="ts">
-interface ClickEvent {
-  count: number
-  time: string
-}
+import { useClickerStore } from '@/stores/clickerStore'
 
-defineProps<{
-  history: ClickEvent[]
-}>()
+const store = useClickerStore()
 
 const getClickClass = (count: number): string => {
   if (count === 3 || count === 4) return 'history-motivation'
@@ -22,11 +17,11 @@ const getClickClass = (count: number): string => {
 </script>
 
 <template>
-  <div v-if="history.length" class="history">
+  <div v-if="store.clickHistory.length" class="history">
     <h3>Klikkhistorikk</h3>
     <ul>
       <li
-        v-for="(item, index) in history"
+        v-for="(item, index) in store.clickHistory"
         :key="index"
         :class="getClickClass(item.count)"
       >
@@ -43,7 +38,7 @@ const getClickClass = (count: number): string => {
   background: #f8f9fa;
   border-radius: 12px;
   text-align: left;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .history h3 {
@@ -66,12 +61,29 @@ const getClickClass = (count: number): string => {
   font-size: 0.95em;
 }
 
-.history li:last-child { border-bottom: none; }
+.history li:last-child {
+  border-bottom: none;
+}
 
-.history-motivation { color: #3498db; }
-.history-milestone { color: #e67e22; font-weight: bold; }
-.history-almost-purple { color: #9b59b6; }
-.history-almost-orange { color: #e67e22; }
-.history-almost-red { color: #e74c3c; animation: pulse 1s infinite; }
-.history-trophy { color: #f1c40f; text-shadow: 0 0 6px gold; }
+.history-motivation {
+  color: #3498db;
+}
+.history-milestone {
+  color: #e67e22;
+  font-weight: bold;
+}
+.history-almost-purple {
+  color: #9b59b6;
+}
+.history-almost-orange {
+  color: #e67e22;
+}
+.history-almost-red {
+  color: #e74c3c;
+  animation: pulse 1s infinite;
+}
+.history-trophy {
+  color: #f1c40f;
+  text-shadow: 0 0 6px gold;
+}
 </style>
