@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-// Spill-state (reaktivt!)
 const score = ref(0)
 const clickPower = ref(1)
 const clicksPerSecond = ref(0)
 
-// Klikk-funksjon
 const click = () => {
   score.value += clickPower.value
 }
 
-// Kjøp oppgradering
 const buyUpgrade = () => {
   const cost = clickPower.value * 100
   if (score.value >= cost) {
@@ -20,7 +17,6 @@ const buyUpgrade = () => {
   }
 }
 
-// Auto-clicker
 const buyAutoClicker = () => {
   const cost = 50 + (clicksPerSecond.value * 25)
   if (score.value >= cost) {
@@ -29,7 +25,6 @@ const buyAutoClicker = () => {
   }
 }
 
-// Auto-click hver sekund
 setInterval(() => {
   score.value += clicksPerSecond.value
 }, 1000)
@@ -37,7 +32,6 @@ setInterval(() => {
 
 <template>
   <div class="clicker-game">
-    <!-- Header + Score -->
     <div class="header">
       <h1>🤑 Clicker</h1>
       <div class="score">
@@ -45,13 +39,11 @@ setInterval(() => {
       </div>
     </div>
 
-    <!-- Hoved-knapp (størst!) -->
     <div class="click-button" @click="click">
       <span>Klikk!</span>
       <small>+{{ clickPower }}</small>
     </div>
 
-    <!-- Oppgraderinger (små knapper) -->
     <div class="upgrades">
       <button class="upgrade-btn" @click="buyUpgrade">
         <span>Større klikk</span>
@@ -64,7 +56,6 @@ setInterval(() => {
       </button>
     </div>
 
-    <!-- Mini-stats -->
     <div class="stats">
       <span>⚡{{ clickPower }}</span>
       <span>🤖{{ clicksPerSecond }}/s</span>
