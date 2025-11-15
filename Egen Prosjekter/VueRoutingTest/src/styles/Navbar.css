@@ -1,0 +1,55 @@
+.navbar {
+  padding: 1rem;
+  background: white;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-button {
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home-button {
+  color: black;
+}
+
+/* .home-button:hover {
+  background: #369e6e;
+} */
+
+.about-button {
+  color: black;
+}
+
+/* .about-button:hover {
+  background: #2980b9;
+} */
+
+.contact-button {
+  color: black;
+}
+
+/* .contact-button:hover {
+  background: #8e44ad;
+} */
+
+.nav-logo {
+  height: 24px;
+  width: auto;
+}
+
+/* .router-link-active {
+  border-color: #000 !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+} */

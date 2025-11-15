@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
+const header = ref("Hei fra Kontakt siden!")
 </script>
 
 <template>
-    <h1>Hei fra side 3</h1>
+    <h1>{{ header }}</h1>
 </template>
 
 <style scoped>
