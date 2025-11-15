@@ -5,7 +5,8 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', component: HomeView },
-    { path: '/about', component: () => import('../views/AboutView.vue') }
+    { path: '/about', component: () => import('../views/AboutView.vue') },
+    { path: '/contact', component: () => import('../views/Contact.vue') }
   ]
 })
 
