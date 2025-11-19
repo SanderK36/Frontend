@@ -11,7 +11,7 @@ export const useTodoStore = defineStore('todo', () => {
     const todos = ref<Todo[]>([
         { id: 1, text: 'Lære Vue', completed: true},
         { id: 2, text: 'Lære Pinia', completed: true},
-        { id: 3, text: 'Lære Lære scoped slots', completed: false},
+        { id: 3, text: 'Lære scoped slots', completed: false},
     ])
 
     const addTodo = (text: string) => {
