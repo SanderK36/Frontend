@@ -13,7 +13,7 @@ defineProps<{
     @click ="store.addPoints()"
     :disabled="disabled"
     >
-    Carrots
+    Click (+{{ store.clickPower }})
     <slots/>
     </button>
 </template>
@@ -28,6 +28,7 @@ defineProps<{
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 8px 0 #e68900;
+  margin: 2rem;
 }
 .big-btn:active {
   transform: translateY(4px);
